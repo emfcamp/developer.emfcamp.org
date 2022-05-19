@@ -8,4 +8,6 @@ This is the documentation for all of the weird and wonderful API's exposed by th
 * [Live talk transcription](transcription)
 * Bar
 * Shop
+* Statistics
+* Badge
 * ???
