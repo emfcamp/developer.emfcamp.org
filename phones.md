@@ -4,7 +4,7 @@ As part of the EMF Phone Operations Centre (POC) this year, we have a set of pro
 communications APIs that you can use to interact with the phone network and build your own
 services.
 
-This is based on the open source [jambonz](jambonz.org) platform, which has APIs for incoming
+This is based on the open source [jambonz](https://www.jambonz.org) platform, which has APIs for incoming
 and outgoing calls similar to some of the other programable communications platforms on the
 market. The key thing is that this one can call and be called from the EMF site phone network.
 
@@ -38,20 +38,20 @@ The system will create an app, allocate you a phone number in the range 555 XXXX
 If you want to test your application prior to camp, you can call it by dialling 0117 200 1500
 and then entering your 555 XXXX application number when prompted.
 
-# Make a Low-Code Application with Node-Red
+# Make a Low-Code Application with Node-RED
 
 We have a platform you can use to create your phone apps on or non-phone apps that interact
 with the badge or any of the other APIs at EMF. 
 
 Its provided by [FlowForge](https://flowforge.com) and allows you to run the open source
-[Node-REd](https://nodered.org) tool, which privides low code programming for event driven
+[Node-RED](https://nodered.org) tool, which privides low code programming for event driven
 applications. We'll be using it in our workshop about programming the phone network.
 
 If you would like an account, please e-mail poc@emfcamp.org as we only have limited capactity.
 
 
-## Set up a Flowforge/Node-Red Project
-1. Log into [Flowforge at https://app.emfcamp.app](Flowforge at https://app.emfcamp.app)
+## Set up a Flowforge/Node-RED Project
+1. Log into [Flowforge at https://app.emfcamp.app](https://app.emfcamp.app)
 1. Create a team if you don't have one already
 1. Create a project
 1. Make a note of your editor URL, you'll need this later
@@ -68,10 +68,10 @@ If you would like an account, please e-mail poc@emfcamp.org as we only have limi
 
 Jambonz nodes will now appear on the menu on the left.
 
-[Jambonz Node-Red Node Documentation](https://flows.nodered.org/node/@jambonz/node-red-contrib-jambonz)
+[Jambonz Node-RED Node Documentation](https://flows.nodered.org/node/@jambonz/node-red-contrib-jambonz)
 
-## Create your first Node-Red flow
-1. Scroll down to the Jambonz Section on the left hand side of Node Red
+## Create your first Node-RED flow
+1. Scroll down to the Jambonz Section on the left hand side of Node RED
 2. Every flow must start and end with a webhook, so drag in a `webhook in` and a `webhook out`
 3. Configure the Webhook In as set up above
 	* Name: Call
@@ -87,9 +87,9 @@ Jambonz nodes will now appear on the menu on the left.
 9. Test your flow by ringing 0117 200 1500
 and entering your 555 XXXX number when prompted.
 
-![Example Node-Red Flow](node-red-flow.png)
+![Example Node-RED Flow](node-red-flow.png)
 	
-## Connect a phone number to the Node-Red Project
+## Connect a phone number to the Node-RED Project
 1. Go to [https://jambonz.emf.camp/signup/](https://jambonz.emf.camp/signup/)
 	* Anything set up here is not easily editable, so double check before you submit
 1. App Name: Type in the the project name you used earlier
