@@ -34,6 +34,23 @@ applications. We'll be using it in our workshop about programming the phone netw
 
 If you would like an account, please e-mail poc@emfcamp.org as we only have limited capactity.
 
+## Setting up a Jambonz / Flowforge / Node-Red Project
+1. Log into app.emfcamp.app
+1. Create a team
+1. Create a project
+1. Click editor at the top right
+1. Click burger menu at top right
+1. Select Manage Palette
+1. Select the Install Tab
+1. Search for Jambonz
+1. Install @jambonz/node-red-contrib-jambonz
+1. Confirm install warning
+1. Wait about a minute, and it'll appear on the Nodes tab.
+
+Jambonz nodes will now appear on the menu on the left.
+
+
+
 
 # Stage Audio
 
