@@ -42,7 +42,7 @@ No data in this yet, it will be formatted like [https://www.emfcamp.org/schedule
 
 # Films
 
-Notes Currently mocked data. Supports `?filter=today` or `?filter=future`
+Currently mocked data. Supports `?filter=today` or `?filter=future`
 
 ## Endpoint
 [https://emffilms.org/api/2022/schedule](https://emffilms.org/api/2022/schedule) 
