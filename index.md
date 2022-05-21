@@ -10,4 +10,5 @@ This is the documentation for all of the weird and wonderful APIs exposed by thi
 * Shop
 * Statistics
 * [Badge](badge)
+* [Wiki](wiki)
 * ???
