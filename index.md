@@ -9,5 +9,5 @@ This is the documentation for all of the weird and wonderful APIs exposed by thi
 * Bar
 * Shop
 * Statistics
-* Badge
+* [Badge](badge)
 * ???
