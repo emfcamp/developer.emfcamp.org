@@ -186,7 +186,7 @@ list, it returns an object with the list as the value of a key.
 `/api/sessions.json` returns a list of current and future bar
 Sessions.
 
-Example (NB the times in this example are *not* final and may change
+Example (N.B. the times in this example are *not* final and may change
 during the event based on available volunteers, etc.):
 
 ```json
@@ -215,6 +215,9 @@ during the event based on available volunteers, etc.):
 ### Event progress
 
 `/api/progress.json` returns general information about bar progress.
+
+Although this drives a couple of graphs on the [bar web site](https://bar.emf.camp/)
+it is *not* intended to be scientifically accurate!
 
 Properties (all Decimal percentages):
 
@@ -258,9 +261,9 @@ beers (on taps) and real ciders (sold from boxes on the bar).
 
 Properties:
 
-`ales`: list of real ale Stock items
-`kegs`: list of keg beer/cider Stock items
-`ciders`: list of real cider Stock items
+* `ales`: list of real ale Stock items
+* `kegs`: list of keg beer/cider Stock items
+* `ciders`: list of real cider Stock items
 
 Example:
 
