@@ -40,6 +40,74 @@ No data in this yet, it will be formatted like [https://www.emfcamp.org/schedule
 ]
 ```
 
+# Now and Next
+
+To find out what talks are happening now or soon a now/next endpoint is available.
+
+## Endpoint
+[https://emfcamp.org/schedule/now-and-next.json](https://emfcamp.org/schedule/now-and-next.json)
+
+### Example
+
+``` json
+{
+  "stage-a": [
+    {
+      "id": 143,
+      "slug": "iure-dolore-aperiam-expedita-cum-magnam-quidem",
+      "start_date": "2022-06-03 10:00:00",
+      "end_date": "2022-06-03 10:30:00",
+      "venue": "Stage A",
+      "latlon": [
+        52.03961,
+        52.03961
+      ],
+      "map_link": "https://map.emfcamp.org/#18.5/52.03961/52.03961",
+      "title": "Iure dolore aperiam expedita cum magnam quidem.",
+      "speaker": "Graeme Adams",
+      "pronouns": null,
+      "user_id": 142,
+      "description": "Adipisci mollitia aliquid qui. Nam quae vero blanditiis minima nulla temporibus rem.\nQuod adipisci modi in autem porro architecto. Est odio sapiente soluta ea dolores.\nUllam nisi perspiciatis praesentium tempora eum perspiciatis. Fuga ut non dolore eum odio.\nCupiditate recusandae dolores molestiae accusantium reiciendis voluptates. Incidunt beatae similique nemo non.\nVitae sequi in soluta fugiat. Tempora maxime neque nostrum. Ea ipsa qui nulla cupiditate. Fuga iste quis autem omnis.",
+      "type": "talk",
+      "may_record": null,
+      "is_fave": false,
+      "source": "database",
+      "link": "http://localhost:2342/line-up?year=2022&slug=iure-dolore-aperiam-expedita-cum-magnam-quidem&proposal_id=143",
+      "start_time": "10:00",
+      "end_time": "10:30"
+    },
+    {
+      "id": 112,
+      "slug": "quos-recusandae-asperiores-ab",
+      "start_date": "2022-06-03 12:00:00",
+      "end_date": "2022-06-03 12:50:00",
+      "venue": "Stage A",
+      "latlon": [
+        52.03961,
+        52.03961
+      ],
+      "map_link": "https://map.emfcamp.org/#18.5/52.03961/52.03961",
+      "title": "Quos recusandae asperiores ab.",
+      "speaker": "William Davies",
+      "pronouns": null,
+      "user_id": 111,
+      "description": "Accusamus facilis earum reiciendis. Laborum fugiat perferendis tempora dolore eius. Neque sunt mollitia in debitis ex deleniti.\nAsperiores quis repellat in fugit voluptatibus. Non id sequi laboriosam perferendis eligendi dicta. Laboriosam tempore temporibus tempora ab itaque.\nAnimi suscipit dolor maxime modi nihil praesentium. Voluptatem consequatur eius debitis nulla quisquam ad. Tempora suscipit id dolores consequatur eveniet autem.",
+      "type": "talk",
+      "may_record": null,
+      "is_fave": false,
+      "source": "database",
+      "link": "http://localhost:2342/line-up?year=2022&slug=quos-recusandae-asperiores-ab&proposal_id=112",
+      "start_time": "12:00",
+      "end_time": "12:50"
+    }
+  ],
+  "stage-b": [...
+  ],
+  "stage-c": [...
+  ]
+}
+```
+
 # Films
 
 Currently mocked data. Supports `?filter=today` or `?filter=future`
