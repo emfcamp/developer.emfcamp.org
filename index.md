@@ -6,8 +6,7 @@ This is the documentation for all of the weird and wonderful APIs exposed by thi
 * [Schedule](schedule)
 * [Phone system](phones)
 * [Live talk transcription](transcription)
-* Bar
-* Shop
+* [Bar and Shop](bar)
 * Statistics
 * [Badge](badge)
 * [Wiki](wiki)
