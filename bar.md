@@ -337,7 +337,7 @@ Example:
 }
 ```
 
-## All stock types
+### All stock types
 
 `/api/stocktypes.json` lists all the types of stock remaining at the
 bar and cybar.
