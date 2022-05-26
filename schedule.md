@@ -113,7 +113,7 @@ To find out what talks are happening by stage now or soon a now/next endpoint is
 
 # Films
 
-Currently mocked data. Supports `?filter=today` or `?filter=future`
+Details of films showing in Stage C every night. Supports `?filter=today` or `?filter=future` on the query string for specific results. Use `films[*].image` to get a relative link to a small-ish portrait jpg from the site.
 
 ## Endpoint
 [https://emffilms.org/api/2022/schedule](https://emffilms.org/api/2022/schedule) 
@@ -124,6 +124,7 @@ Currently mocked data. Supports `?filter=today` or `?filter=future`
     "schemaVersion": 1,
     "films": [
         {
+            "display": true,
             "slug": "quam",
             "title": "Quam",
             "director": "Nettle Writtle",
@@ -140,7 +141,8 @@ Currently mocked data. Supports `?filter=today` or `?filter=future`
             ],
             "precis": {
                 "full": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
-                "oneLine": "Nam tristique tortor eu pede."
+                "oneLine": "Nam tristique tortor eu pede.",
+                "special": "If this node exists, this has a special event associated with it"
             },
             "tagline": "engage B2C initiatives",
             "showing": {
