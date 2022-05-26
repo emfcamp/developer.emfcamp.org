@@ -42,10 +42,13 @@ No data in this yet, it will be formatted like [https://www.emfcamp.org/schedule
 
 # Now and Next
 
-To find out what talks are happening now or soon a now/next endpoint is available.
+To find out what talks are happening by stage now or soon a now/next endpoint is available. Filters by stage are also supported e.g. `?venue=Stage+A`.
 
 ## Endpoint
 [https://emfcamp.org/schedule/now-and-next.json](https://emfcamp.org/schedule/now-and-next.json)
+
+## Filters
+
 
 ### Example
 
