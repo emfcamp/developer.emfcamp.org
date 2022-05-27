@@ -17,7 +17,7 @@ Official APIs:
 * [Wiki](wiki)
 * Statistics - [Issue #22](https://github.com/emfcamp/developer.emfcamp.org/issues/22)
 * Maps - [Issue #10](https://github.com/emfcamp/developer.emfcamp.org/issues/10)
-* Villages - [Issue #11](https://github.com/emfcamp/developer.emfcamp.org/issues/11)
+* [Villages](villages) - [Issue #11](https://github.com/emfcamp/developer.emfcamp.org/issues/11)
 * MQTT - [Issue #15](https://github.com/emfcamp/developer.emfcamp.org/issues/15)
 * ???
 
