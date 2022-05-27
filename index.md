@@ -5,7 +5,7 @@ This is the documentation for all of the weird and wonderful APIs exposed by thi
 
 If you know of an API that isn't documented here [please let us know](https://github.com/emfcamp/developer.emfcamp.org/issues) or raise a [pull request](https://github.com/emfcamp/developer.emfcamp.org/pulls) to add it.
 
-To get support and chat to other people about these APIs [join the #emfcamp-developer channel](https://web.libera.chat/?channel=#emfcamp-developer) on [libera IRC](https://libera.chat/).
+To get support and chat about these APIs [join the #emfcamp-developer channel](https://web.libera.chat/?channel=#emfcamp-developer) on [libera IRC](https://libera.chat/).
 
 **This is a work in progress and all documentation improvements are gratefully accepted!**
 
