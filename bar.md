@@ -62,7 +62,7 @@ Properties:
 * `name`: a string describing this type of stock; unique per manufacturer
 * `abv`: an optional Decimal giving the alcohol by volume
 * `fullname`: manufacturer, name and abv combined into a single string
-* `sale_unit`: a string giving the unit in which we 
+* `sale_unit`: a string giving the unit in which we sell this type of stock, eg. "bottle" or "pint"
 * `price`: the sale price as a Decimal, including VAT where appropriate, for a `sale_unit` of this type of stock
 * `base_unit`: a string giving the unit in which we count how much of this stock we have bought and sold, eg. "pint" or "ml"
 * `base_units_bought`: the amount of stock bought in base units as a Decimal
