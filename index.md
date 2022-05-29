@@ -25,4 +25,4 @@ Official APIs:
 
 Attendee-run APIs:
 --
-* YOUR THING HERE!
+* Duck fact of the day API: https://03vpefsitf.execute-api.eu-west-1.amazonaws.com/prod/
