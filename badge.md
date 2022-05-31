@@ -16,3 +16,5 @@ The OpenAPI Specification (json) can be found at [https://2022.badge.emfcamp.org
 ## App Tutorial
 
 There is [Quickstart information](https://github.com/emfcamp/tidal-docs/blob/main/AppQuickstart.md) on building apps for the Badge in the docs repository on GitHub.
+
+You can upload code to the badge using the [Web Serial Editor](https://editor.badge.emfcamp.org/).
