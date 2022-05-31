@@ -1,40 +1,38 @@
 # Talks
 
-No data in this yet, it will be formatted like [https://www.emfcamp.org/schedule/2018.json](https://www.emfcamp.org/schedule/2018.json)
-
 ## Endpoint
+
 [https://www.emfcamp.org/schedule/2022.json](https://www.emfcamp.org/schedule/2022.json)
 
 ## Example
+
 ``` json
 [
   {
-    "id": 309,
-    "source": "database",
-    "start_date": "2018-09-02 19:20:00",
-    "start_time": "19:20",
-    "slug": "braaaaaaains-archaeology-and-philosophy-of-zombies-in-games",
-    "is_fave": false,
+    "id": 165,
+    "slug": "hacking-train-tickets-for-fun-but-not-for-profit",
+    "start_date": "2022-06-03 13:50:00",
+    "end_date": "2022-06-03 14:20:00",
     "venue": "Stage A",
-    "title": "BRAAAAAAAINS: Archaeology and Philosophy of Zombies in Games",
-    "description": "These are not the zombies you've fragged! A bioarchaeologist and an applied philosopher will take you on a historical zombie adventure beyond Romero's shambling hordes and stories about Haitian Voodoo. Did you know that the D&D wondrous item: Hand of Glory was inspired by real artefacts? Or that miasmic \"zombification\" in some video games reflects medieval ideas about contagion? What do past ideas about zombies tell us about zombies now? And how do video game zombies reflect current ideas about ethics? Also, find out how zombies play a role in cutting-edge neuroscience and ICT research!",
-    "type": "talk",
-    "link": "http://www.emfcamp.org/line-up/2018/309",
-    "user_id": 1285,
-    "map_link": "https://map.emfcamp.org/#18.5/52.0396099/-2.377866",
-    "may_record": true,
-    "speaker": "Dr. Tyr Fothergill",
-    "end_time": "20:00",
-    "end_date": "2018-09-02 20:00:00",
     "latlon": [
-      52.0396099,
-      -2.377866
+      52.03961,
+      -2.37787
     ],
-    "video": {
-      "ccc": "https://media.ccc.de/v/emf2018-309-braaaaaaains-archaeology-and-philosophy-of-zombies-in-games",
-      "youtube": "https://www.youtube.com/watch?v=N9_z6Zp5waY",
-      "preview_image": "https://static.media.ccc.de/media/events/emf/2018/309-hd_preview.jpg"
-    }
+    "map_link": "https://map.emfcamp.org/#18.5/52.03961/-2.37787",
+    "title": "Hacking train tickets for fun, but not for profit",
+    "speaker": "Hugh Wells",
+    "pronouns": "",
+    "user_id": 25,
+    "description": "We take a scenic tour through the origins of the UK train ticket, from the original BR specification in the 1980s through to modern replacements like mTickets, eTickets and ITSO. \r\n\r\nThis is just a detour though, and we'll focus on the 'orange ticket' (RSP 9399/9599) - which continues to be a stalwart of the UK rail network. Surely they can't be that secure? After all, anyone can encode a magstripe - right? \r\n\r\nWe'll take a look through the data encoded on these tickets, what interesting things you can do with them and maybe (assuming I've got it working by then) we'll be able to read and write our own! ",
+    "type": "talk",
+    "may_record": true,
+    "is_fave": false,
+    "is_family_friendly": false,
+    "content_note": "",
+    "source": "database",
+    "link": "https://www.emfcamp.org/schedule/2022/165-hacking-train-tickets-for-fun-but-not-for-profit",
+    "start_time": "13:50",
+    "end_time": "14:20"
   },
   ...
 ]
@@ -45,14 +43,14 @@ No data in this yet, it will be formatted like [https://www.emfcamp.org/schedule
 To find out what talks are happening by stage now or soon a now/next endpoint is available. Filters by stage are also supported e.g. `?venue=Stage+A`.
 
 ## Endpoint
+
 [https://emfcamp.org/schedule/now-and-next.json](https://emfcamp.org/schedule/now-and-next.json)
 
 ## Filters
 
-
 ### Example
 
-``` json
+```json
 {
   "stage-a": [
     {
@@ -116,9 +114,11 @@ To find out what talks are happening by stage now or soon a now/next endpoint is
 Details of films showing in Stage C every night. Supports `?filter=today` or `?filter=future` on the query string for specific results. Use `films[*].image` to get a relative link to a small-ish portrait jpg from the site.
 
 ## Endpoint
-[https://emffilms.org/api/2022/schedule](https://emffilms.org/api/2022/schedule) 
+
+[https://emffilms.org/api/2022/schedule](https://emffilms.org/api/2022/schedule)
 
 ## Example
+
 ```json
 {
     "schemaVersion": 1,
