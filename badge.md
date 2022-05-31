@@ -2,8 +2,9 @@
 
 ## Hatchery
 
-The hatchery software repository, full API documentation and swagger explorer can be found at [https://2022.badge.emfcamp.org/api](https://2022.badge.emfcamp.org/api)  
-OpenAPI Specification (json) can be found at [https://2022.badge.emfcamp.org/docs](https://2022.badge.emfcamp.org/docs)  
+The Hatchery software repository, full API documentation and Swagger OpenAPI Explorer can be found at [https://2022.badge.emfcamp.org/api](https://2022.badge.emfcamp.org/api)
+
+The OpenAPI Specification (json) can be found at [https://2022.badge.emfcamp.org/docs](https://2022.badge.emfcamp.org/docs)
 
 * Basket
   * Related to getting Projects for specific Badge models.
@@ -11,3 +12,9 @@ OpenAPI Specification (json) can be found at [https://2022.badge.emfcamp.org/doc
   * Related to getting Eggs / Projects.
 * External
   * External API proxies for convenience of apps.
+
+## App Tutorial
+
+There is [Quickstart information](https://github.com/emfcamp/tidal-docs/blob/main/AppQuickstart.md) on building apps for the Badge in the docs repository on GitHub.
+
+You can upload code to the badge using the [Web Serial Editor](https://editor.badge.emfcamp.org/).
