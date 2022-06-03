@@ -3,6 +3,7 @@
 There is a weather station attached to a mast at HQ.
 Various sensor readings are pushed to MQTT topics listed below every ten seconds.
 
+The broker is at `mqtt://mqtt.emf.camp`.
 The prefix for each topic is `emf/weather/`.
 
 * `runtime`: Weather station runtime in seconds.
