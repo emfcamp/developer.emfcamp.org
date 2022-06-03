@@ -18,6 +18,7 @@ Official APIs:
 * [Villages](villages)
 * [Badge](badge)
 * [Wiki](wiki)
+* [Weather](weather)
 * Statistics - [Issue #22](https://github.com/emfcamp/developer.emfcamp.org/issues/22)
 * Maps - [Issue #10](https://github.com/emfcamp/developer.emfcamp.org/issues/10)
 * MQTT - [Issue #15](https://github.com/emfcamp/developer.emfcamp.org/issues/15)
