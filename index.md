@@ -19,7 +19,7 @@ Official APIs:
 * [Badge](badge)
 * [Wiki](wiki)
 * [Weather](weather)
-* [Statistics](https://dashboard.emf.camp)
+* [Statistics](statistics)
 * Maps - [Issue #10](https://github.com/emfcamp/developer.emfcamp.org/issues/10)
 * MQTT - [Issue #15](https://github.com/emfcamp/developer.emfcamp.org/issues/15)
 * ???
