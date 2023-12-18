@@ -5,7 +5,7 @@ communications APIs that you can use to interact with the phone network and buil
 services.
 
 This is based on the open source [jambonz](https://www.jambonz.org) platform, which has APIs for incoming
-and outgoing calls similar to some of the other programable communications platforms on the
+and outgoing calls similar to some of the other programmable communications platforms on the
 market. The key thing is that this one can call and be called from the EMF site phone network.
 
 You can find the details on the API at [https://www.jambonz.org/docs/](https://www.jambonz.org/docs/)
@@ -44,7 +44,7 @@ We have a platform you can use to create your phone apps on or non-phone apps th
 with the badge or any of the other APIs at EMF. 
 
 Its provided by [FlowForge](https://flowforge.com) and allows you to run the open source
-[Node-RED](https://nodered.org) tool, which privides low code programming for event driven
+[Node-RED](https://nodered.org) tool, which provides low code programming for event driven
 applications. We'll be using it in our workshop about programming the phone network.
 
 If you would like an account, please e-mail poc@emfcamp.org as we only have limited capactity.
