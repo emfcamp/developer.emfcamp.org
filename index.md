@@ -1,10 +1,12 @@
+Electromagnetic Field API documentation
+==
+
 * * *
 WARNING THESE PAGES ARE FROM EMF 2022 SOMETHINGS MAY CHANGE OR NOT BE AVAILABLE AT THE 2024 EVENT
 
 We are hoping to start updating these pages soon
 * * *
-Electromagnetic Field API documentation
-==
+
 
 This is the documentation for all of the weird and wonderful APIs exposed by things at EMF.
 
