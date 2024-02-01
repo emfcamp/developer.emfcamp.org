@@ -1,3 +1,8 @@
+* * *
+WARNING THESE PAGES ARE FROM EMF 2022 SOMETHINGS MAY CHANGE OR NOT BE AVAILABLE AT THE 2024 EVENT
+
+We are hoping to start updating these pages soon
+* * *
 # MQTT Weather Data
 
 There is a weather station attached to a mast at HQ.

@@ -1,3 +1,9 @@
+* * *
+WARNING THESE PAGES ARE FROM EMF 2022 SOMETHINGS MAY CHANGE OR NOT BE AVAILABLE AT THE 2024 EVENT
+
+We are hoping to start updating these pages soon
+* * *
+
 # Talks
 
 ## Endpoint
