@@ -1,3 +1,8 @@
+* * *
+WARNING THESE PAGES ARE FROM EMF 2022 SOMETHINGS MAY CHANGE OR NOT BE AVAILABLE AT THE 2024 EVENT
+
+We are hoping to start updating these pages soon
+* * *
 # Villages API
 
 An easy to use API to allow you to get some simple information about EMF's villages. They are available from [https://www.emfcamp.org/api](https://www.emfcamp.org/api).

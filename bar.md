@@ -1,3 +1,8 @@
+* * *
+WARNING THESE PAGES ARE FROM EMF 2022 SOMETHINGS MAY CHANGE OR NOT BE AVAILABLE AT THE 2024 EVENT
+
+We are hoping to start updating these pages soon
+* * *
 # 2022 Bar and Shop
 
 There is a simple read-only interface to the till system running the
