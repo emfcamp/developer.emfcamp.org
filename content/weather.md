@@ -5,8 +5,6 @@ description: >
   Live data from EMF's own weather station.
 ---
 
-# MQTT Weather Data
-
 There is a weather station attached to a mast at HQ.
 Various sensor readings are pushed to MQTT topics listed below every ten seconds.
 
@@ -34,4 +32,4 @@ The prefix for each topic is `emf/weather/`.
 * `feelslike`: [Feels like](https://blog.metoffice.gov.uk/2012/02/15/what-is-feels-like-temperature/) temperature in degrees Celsius (`temp` must be above 26.7).
 * `heatindex`: [Heat index](https://www.weather.gov/ama/heatindex) in degrees Celsius (`temp` must be above 26.7).
 * `solarradiation_lux`: Solar radiation in lux.
-* `windchill`: [Wind chill] (https://www.metoffice.gov.uk/weather/learn-about/weather/types-of-weather/wind/wind-chill-factor) (`temp` must be below 12 and `windspeed` above 3).
+* `windchill`: [Wind chill](https://www.metoffice.gov.uk/weather/learn-about/weather/types-of-weather/wind/wind-chill-factor) (`temp` must be below 12 and `windspeed` above 3).
