@@ -1,9 +1,10 @@
-* * *
-WARNING THESE PAGES ARE FROM EMF 2022 SOMETHINGS MAY CHANGE OR NOT BE AVAILABLE AT THE 2024 EVENT
+---
+title: Wiki (semantic-mediawiki)
+linkTitle: Wiki
+description: >
+  Using the Semantic MediaWiki API on wiki.emfcamp.org.
+---
 
-We are hoping to start updating these pages soon
-* * *
-# Wiki (semantic-mediawiki)
 The EMF Wiki ([https://wiki.emfcamp.org/wiki/](https://wiki.emfcamp.org/wiki/)) runs MediaWiki (which has its [own API](https://www.mediawiki.org/wiki/API:Main_page)), with the [Semantic MediaWiki](https://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki) extension.
 
 Semantic MediaWiki's API allows for structured data queries, and is [well documented](https://www.semantic-mediawiki.org/wiki/Help:API).

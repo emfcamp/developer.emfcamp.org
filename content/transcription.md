@@ -1,9 +1,9 @@
-* * *
-WARNING THESE PAGES ARE FROM EMF 2022 SOMETHINGS MAY CHANGE OR NOT BE AVAILABLE AT THE 2024 EVENT
+---
+title: Transcription feeds
+description: >
+  Real-time talk transcription feeds from stage audio.
+---
 
-We are hoping to start updating these pages soon
-* * *
-# Stage Text
 We have an API that provides a feed of the live transcription from each of the 3 stages.
 
 You can fetch a text file of the talk so far at `https://stagetext.emfcamp.app/history/[stage]`,

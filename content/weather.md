@@ -1,8 +1,10 @@
-* * *
-WARNING THESE PAGES ARE FROM EMF 2022 SOMETHINGS MAY CHANGE OR NOT BE AVAILABLE AT THE 2024 EVENT
+---
+title: Weather over MQTT
+linkTitle: Weather
+description: >
+  Live data from EMF's own weather station.
+---
 
-We are hoping to start updating these pages soon
-* * *
 # MQTT Weather Data
 
 There is a weather station attached to a mast at HQ.

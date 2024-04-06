@@ -1,18 +1,20 @@
-* * *
-WARNING THESE PAGES ARE FROM EMF 2022 SOMETHINGS MAY CHANGE OR NOT BE AVAILABLE AT THE 2024 EVENT
+---
+title: Talks Schedule APIs
+linkTitle: Talks schedule
+description: >
+  JSON endpoints for the full talk schedule, upcoming films at Stage C, and
+  current & next talks on each stage.
+---
 
-We are hoping to start updating these pages soon
-* * *
+## Full schedule
 
-# Talks
-
-## Endpoint
+### Endpoint
 
 [https://www.emfcamp.org/schedule/2022.json](https://www.emfcamp.org/schedule/2022.json)
 
-## Example
+### Example
 
-``` json
+```json
 [
   {
     "id": 165,
@@ -44,17 +46,17 @@ We are hoping to start updating these pages soon
 ]
 ```
 
-# Now and Next
+## Now and Next
 
 To find out what talks are happening by stage now or soon a now/next endpoint is available. Filters by stage are also supported e.g. `?venue=Stage+A`.
 
-## Endpoint
+### Endpoint
 
 [https://emfcamp.org/schedule/now-and-next.json](https://emfcamp.org/schedule/now-and-next.json)
 
-## Filters
+### Filters
 
-### Example
+#### Example
 
 ```json
 {
@@ -115,15 +117,15 @@ To find out what talks are happening by stage now or soon a now/next endpoint is
 }
 ```
 
-# Films
+## Films
 
 Details of films showing in Stage C every night. Supports `?filter=today` or `?filter=future` on the query string for specific results. Use `films[*].image` to get a relative link to a small-ish portrait jpg from the site.
 
-## Endpoint
+### Endpoint
 
 [https://emffilms.org/api/2022/schedule](https://emffilms.org/api/2022/schedule)
 
-## Example
+### Example
 
 ```json
 {

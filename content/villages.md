@@ -1,23 +1,19 @@
-* * *
-WARNING THESE PAGES ARE FROM EMF 2022 SOMETHINGS MAY CHANGE OR NOT BE AVAILABLE AT THE 2024 EVENT
+---
+title: Villages API
+description: >
+  A straightforward API publishing simple information about EMF's villages.
+---
 
-We are hoping to start updating these pages soon
-* * *
-# Villages API
-
-An easy to use API to allow you to get some simple information about EMF's villages. They are available from [https://www.emfcamp.org/api](https://www.emfcamp.org/api).
+They are available from [https://www.emfcamp.org/api](https://www.emfcamp.org/api).
 
 ## Endpoints
 
-### Villages
+### Villages (get all)
 
 Returns a list of all villages at EMF 2022 as a json object.
 
 #### Endpoint
 [https://www.emfcamp.org/api/villages](https://www.emfcamp.org/api/villages)
-
-
-##### My Village
 
 
 #### Example
@@ -40,7 +36,7 @@ Returns a list of all villages at EMF 2022 as a json object.
 ]
 ```
 
-### Village
+### Village (get one)
 Returns a single village's information as json if passed a valid id.
 
 #### Endpoint
@@ -59,7 +55,7 @@ Returns a single village's information as json if passed a valid id.
 ]
 ```
 
-### My Village 
+### My Village
 
 If your EMF account is a member of a village you are logged in you can return your village's information as json.
 
