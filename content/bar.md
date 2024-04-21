@@ -1,16 +1,16 @@
-* * *
-WARNING THESE PAGES ARE FROM EMF 2022 SOMETHINGS MAY CHANGE OR NOT BE AVAILABLE AT THE 2024 EVENT
-
-We are hoping to start updating these pages soon
-* * *
-# 2022 Bar and Shop
+---
+title: Bar and Shop data
+linkTitle: Bar & Shop
+description: >
+  Opening times, live stock, prices and sales data for the Bar, Cybar and Shop.
+---
 
 There is a simple read-only interface to the till system running the
 bar, Null Sector bar, and shop.  It's available via HTTP GET from
 `bar.emf.camp` and returns JSON, except when you request an object
 that does not exist when it will return HTTP 404.
 
-[The web service that implements this API is here.](https://github.com/emfcamp/quicktill-tillweb)
+The web service that implements this API is here: <https://github.com/emfcamp/quicktill-tillweb>
 
 ## Data types
 

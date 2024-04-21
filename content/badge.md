@@ -1,9 +1,10 @@
-* * *
-WARNING THESE PAGES ARE FROM EMF 2022 SOMETHINGS MAY CHANGE OR NOT BE AVAILABLE AT THE 2024 EVENT
-
-We are hoping to start updating these pages soon
-* * *
-# 2022 TiDAL
+---
+title: Badge (2022) app repository and app development
+linkTitle: Badge
+description: >
+  A software repository for TiDAL badge apps, and API proxy services.  You can
+  write and publish your own apps!
+---
 
 ## Hatchery
 
