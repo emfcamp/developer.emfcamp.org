@@ -1,3 +1,5 @@
+node_modules/
+
 # Hugo-generated files
 /public/
 /resources/_gen/
