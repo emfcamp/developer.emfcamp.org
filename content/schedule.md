@@ -2,17 +2,18 @@
 title: Talks Schedule APIs
 linkTitle: Talks schedule
 description: >
-  JSON endpoints for the full talk schedule, upcoming films at Stage C, and
+  Endpoints for the full talk schedule, upcoming films at Stage C, and
   current & next talks on each stage.
 ---
 
 ## Full schedule
 
-### Endpoint
+### Endpoints
 
-[https://www.emfcamp.org/schedule/2022.json](https://www.emfcamp.org/schedule/2022.json)
+#### JSON
+[https://www.emfcamp.org/schedule/2024.json](https://www.emfcamp.org/schedule/2024.json)
 
-### Example
+##### Example
 
 ```json
 [
@@ -45,6 +46,43 @@ description: >
   ...
 ]
 ```
+
+#### ICal
+
+There's also an [iCalendar version](https://en.wikipedia.org/wiki/ICalendar) of the main feed.
+
+[https://www.emfcamp.org/schedule/2024.ical](https://www.emfcamp.org/schedule/2024.ical)
+
+##### Example
+
+```
+BEGIN:VCALENDAR
+VERSION:2.0
+SUMMARY:EMF 2024
+X-WR-CALDESC:EMF 2024
+X-WR-CALNAME:EMF 2024
+BEGIN:VEVENT
+SUMMARY:Soldering Workshop (Beginners)
+DTSTART;TZID=Europe/London;VALUE=DATE-TIME:20240531T133000
+DTEND;TZID=Europe/London;VALUE=DATE-TIME:20240531T150000
+UID:531
+DESCRIPTION:Badge soldering workshop for people who haven't soldered befor
+ e - you can learn how to solder with a simple LED badge kit! Younger child
+ ren can do this with parental supervision. This will not take the full 90 
+ minutes\, so feel free to drop in. Maximum of 10 people at a time.\n\nAtte
+ nding this workshop will cost: £3\nSuitable age range: Aimed at adults\, 
+ but supervised kids welcome.\nAttendees should bring: Badge and soldering 
+ equipment provided. Children must be supervised.\n\nLink: https://www.emfc
+ amp.org/schedule/2024/531-soldering-workshop-beginners
+LOCATION:Workshop 1 (NottingHack)
+END:VEVENT
+BEGIN:VEVENT
+... (more events here)
+END:VEVENT
+END:VCALENDAR
+
+```
+
 
 ## Now and Next
 
