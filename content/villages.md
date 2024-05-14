@@ -10,7 +10,7 @@ They are available from [https://www.emfcamp.org/api](https://www.emfcamp.org/ap
 
 ### Villages (get all)
 
-Returns a list of all villages at EMF 2022 as a json object.
+Returns a list of all villages at EMF 2024 as a json object.
 
 #### Endpoint
 [https://www.emfcamp.org/api/villages](https://www.emfcamp.org/api/villages)
