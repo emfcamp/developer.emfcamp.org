@@ -119,11 +119,11 @@ To find out what talks are happening by stage now or soon a now/next endpoint is
 
 ## Films
 
-Details of films showing in Stage C every night. Supports `?filter=today` or `?filter=future` on the query string for specific results. Use `films[*].image` to get a relative link to a small-ish portrait jpg from the site.
+Details of films showing in Stage C every night.
 
 ### Endpoint
 
-[https://emffilms.org/api/2022/schedule](https://emffilms.org/api/2022/schedule)
+[https://emffilms.org/schedule.json](https://emffilms.org/schedule.json)
 
 ### Example
 
