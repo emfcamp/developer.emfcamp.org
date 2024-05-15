@@ -22,7 +22,6 @@ There are a couple of points to note regarding our implementation:
 - You won't see calls from phones in your jambonz portal call logs, this is due to the way we setup the system and too late to re-design for this year, if you need a trace talk to the Phone Team.
 - SMS/SMPP/Messaging is not supported (might be at some point)
 - We have provided AWS as a Speech to Text and Text to Speech provider for all accounts to use, but someone is paying for this out of their own pocket, so please don't start transcribing the whole talks feed!
-- If you want to add additional speech providers that are only avaible on your account you are welcome to do so in the jambonz console.
 - We reccomend not changing the password for your jambonz account in the jambonz console do this via https://phones.emfcamp.org instead under user profile, Create Jambonz Account. This page will overwrite any changes in jambonz.
 
 
