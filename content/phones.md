@@ -40,3 +40,9 @@ Login to https://jambonz.poc.emf.camp with the password you just created and in 
 You can now create an application, with Calling & Call Status wehooks, then link your phone number to that application.
 
 [Video walkthrough to come]
+
+
+## Phonebook
+
+You can fetch a JSON representation of the public phonebook as shown on https://phones.emfcamp.org 
+by making a GET to [https://phones.emfcamp.org/api/phonebook/EMF2024](https://phones.emfcamp.org/api/phonebook/EMF2024)
