@@ -960,6 +960,30 @@ Example:
 }
 ```
 
+### Cups re-used
+
+Key: `totals/cups-re-used`
+
+This object gives the number of cups that have been brought back to
+the bar to be re-filled. (When someone brings a cup to the bar to be
+filled with their drink, rather than take a fresh cup from our supply,
+we offer a small discount. This event we are paying a small amount to
+hire re-usable plastic cups, but a larger amount for each one actually
+used and requiring cleaning.)
+
+This object is not updated in real-time. Instead, an update is
+published every minute.
+
+Example:
+
+```json
+{
+  "type": "cups re-used",
+  "key": "totals/cups-re-used",
+  "count": 1
+}
+```
+
 ## MQTT
 
 All the objects that can be subscribed to over the websocket will also
