@@ -7,15 +7,11 @@ cascade:
 This is the documentation for all of the weird and wonderful APIs exposed by things at EMF.
 {.h2}
 
-
-{{% pageinfo color="danger" %}}
-WARNING: These pages are still being updated frequently.
-{.h2 .text-center}
-
+{{% alert title="These pages are still being updated frequently." color="danger" %}}
 Some things may change or not be available at the 2024 event.
 
 If you'd like to help improve this documentation, or add more things, come and talk to us!
-{{% /pageinfo %}}
+{{% /alert %}}
 
 ## Help improve this!
 
