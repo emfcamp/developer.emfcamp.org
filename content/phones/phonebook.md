@@ -14,7 +14,7 @@ Here is some example output, formatted prettily:
   {
     "value": "1020",
     "label": "NOC",
-    "typeofservice_id": "SNOM",
+    "typeofservice_id": "SNOM"
   },
   {
     "value": "9000",
