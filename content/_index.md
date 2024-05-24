@@ -9,12 +9,12 @@ This is the documentation for all of the weird and wonderful APIs exposed by thi
 
 
 {{% pageinfo color="danger" %}}
-WARNING: THESE PAGES ARE FROM EMF 2022
+WARNING: These pages are still being updated frequently.
 {.h2 .text-center}
 
 Some things may change or not be available at the 2024 event.
 
-We are hoping to start updating the content on this site soon. (You can help out!)
+If you'd like to help improve this documentation, or add more things, come and talk to us!
 {{% /pageinfo %}}
 
 ## Help improve this!
