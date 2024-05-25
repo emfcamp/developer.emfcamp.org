@@ -9,4 +9,5 @@ Here are some links to attendee-run APIs:
 * Enhanced schedule API, more details [here](https://github.com/DanNixon/emfcamp-schedule-api/tree/main/adapter):
   - 2024: [https://schedule.emfcamp.dan-nixon.com/](https://schedule.emfcamp.dan-nixon.com/)
   - 2022: [https://2022.schedule.emfcamp.dan-nixon.com/](https://2022.schedule.emfcamp.dan-nixon.com/)
+* [GCHQ.NET: Great Camp Hexpansion Quest API](https://gchq.net/api/docs/)
 * [MQTT schedule announcements](https://github.com/DanNixon/emfcamp-2024/blob/main/cloud-apps/schedule-mqtt-announcer/README.md)
