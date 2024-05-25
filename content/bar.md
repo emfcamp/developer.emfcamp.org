@@ -989,8 +989,4 @@ Example:
 All the objects that can be subscribed to over the websocket will also
 be published over MQTT.
 
-Server details will be made available closer to the event.
-
-If the event has already started and this page has not been updated
-with server details, please contact the bar! Call 2337 or email
-steve@emfcamp.org
+Check out the [MQTT broker](/mqtt/) page for details on how to connect.
