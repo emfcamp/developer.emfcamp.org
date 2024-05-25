@@ -42,6 +42,7 @@ Check out topics with these prefixes, which might have something fun to look at:
 - `emf/bar/` -- live stats from the Robot Arms and Null Sector's Cybar.  See the [Bar page](/bar/) for the full rundown of what's published here.  
   TL;DR: anything available over the websocket API is also going to be on MQTT.
 - `emf/films/` -- EMF Films will be publishing "an unnecessary level of info" under here.
+- `emf/weather/` -- live weather data from HQ.  Full details on the [Weather](/weather/) page.
 
 ### Tips on topic naming, and wildcard subscriptions
 
