@@ -1,9 +1,10 @@
 ---
-title: Badge (2022) app repository and app development
-linkTitle: Badge
+title: TiDAL (EMF 2022 badge)
+linkTitle: TiDAL (2022)
 description: >
   A software repository for TiDAL badge apps, and API proxy services.  You can
   write and publish your own apps!
+weight: -22
 ---
 
 ## Hatchery
