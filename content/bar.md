@@ -987,6 +987,11 @@ Example:
 ## MQTT
 
 All the objects that can be subscribed to over the websocket will also
-be published over MQTT.
+be published over MQTT, as `emf/bar/{key}`
+(eg. `emf/bar/stockline/100`). The "retain" flag will be set.
+
+If a key is removed, a message with a zero length payload will be
+published (to remove the retained data) and then a "Not present"
+object will be sent without the "retain" flag set.
 
 Check out the [MQTT broker](/mqtt/) page for details on how to connect.
