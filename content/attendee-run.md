@@ -11,8 +11,8 @@ Here are some links to attendee-run APIs:
   - 2022: [https://2022.schedule.emfcamp.dan-nixon.com/](https://2022.schedule.emfcamp.dan-nixon.com/)
 * [GCHQ.NET: Great Camp Hexpansion Quest API](https://gchq.net/api/docs/)
 * [MQTT schedule announcements](https://github.com/DanNixon/emfcamp-2024/blob/main/cloud-apps/schedule-mqtt-announcer/README.md)
-* Open EMF Camper
-  - [drinks](https://emf.harvinderatwal.com/beer?events=drink)
+* [Open EMF Camper](https://emf.harvinderatwal.com)
+  - [drinks](https://emf.harvinderatwal.com/beer?event=drink)
   - [latest status](https://emf.harvinderatwal.com/beer?event=status&type=latest)
   - [status distribution](https://emf.harvinderatwal.com/beer?event=status)
   - [toilet](https://emf.harvinderatwal.com/beer?event=toilet)
