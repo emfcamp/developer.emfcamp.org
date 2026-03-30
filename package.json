@@ -8,9 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.19",
+    "autoprefixer": "^10.4.27",
     "hugo-extended": "^0.155.3",
-    "postcss-cli": "^11.0.0",
-    "sass": "^1.25.0"
+    "postcss-cli": "^11.0.1",
+    "sass": "^1.98.0"
   }
 }
