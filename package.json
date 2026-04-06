@@ -11,6 +11,6 @@
     "autoprefixer": "^10.4.27",
     "hugo-extended": "^0.155.3",
     "postcss-cli": "^11.0.1",
-    "sass": "^1.98.0"
+    "sass": "^1.99.0"
   }
 }
