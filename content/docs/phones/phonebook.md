@@ -3,6 +3,8 @@ title: Phonebook JSON
 description: Fetch the public phonebook over HTTP
 ---
 
+** This information is from EMF2024 and is subject to change for EMF 2026 **
+
 You can fetch a JSON representation of the [public phonebook][phonebook]
 from this URL:  
 <https://phones.emfcamp.org/api/phonebook/EMF2024>
