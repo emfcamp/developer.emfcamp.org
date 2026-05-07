@@ -1,5 +1,5 @@
 ---
 title: Phone system
-description: Phonebook JSON data, and a platform for programmable telephony hacks
+description: Details from EMF 2024, and are very likely to change for EMF 2026
 ---
 
