@@ -1,11 +1,13 @@
 ---
 title: Jambonz
-description: A programmable system for telephony apps and hacks
+description: A programmable system for telephony apps and hacks  
 ---
 
-As part of the EMF Phone Operations Centre (POC), aka 'Phones team', we have a
+# This documentation is from EMF 2024, and EMF 2026 might not be using Jambonz for telephony apps.
+
+As part of the EMF Phones team, we have a
 set of programmable communications APIs that you can use to interact with the
-phone network and build your own services.
+phone network §and build your own services.
 
 This is based on the open source [Jambonz](https://www.jambonz.org) platform.
 Jambonz has APIs for incoming and outgoing calls similar to some of the other
