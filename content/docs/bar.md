@@ -5,20 +5,20 @@ description: >
   Opening times, live stock, prices and sales data for the Bar and Cybar.
 ---
 * * *
-Example data is from this year's database, although sale prices
-are still subject to change.
+Example data is currently from the 2024 database but will be updated
+before the event starts.
 
 Prior to the event, this interface is available for testing at
 https://emftill.assorted.org.uk/ although we make no guarantees about
 the accuracy of the data returned!
 * * *
 
-# 2024 Bars
+# 2026 Bars
 
 There is a simple read-only interface to the till system running the
-main bar and the Null Sector bar.  It's available via HTTP GET from
-`bar.emf.camp` and returns JSON, except when you request an object
-that does not exist when it will return HTTP 404.
+main bar, Null Sector bar and the "secret" bar.  It's available via
+HTTP GET from `bar.emf.camp` and returns JSON, except when you request
+an object that does not exist when it will return HTTP 404.
 
 Some types of object can be subscribed to over a websocket
 connection. These objects have a property "key" that you can use to
@@ -27,7 +27,7 @@ websocket connection immediately after subscription, and then again
 whenever the object is updated. The websocket is at
 `wss://bar.emf.camp/websocket/`
 
-[The web service that implements this API is here.](https://github.com/emfcamp/quicktill-tillweb)
+[The web service that implements this API is here.](https://github.com/emfcamp/emftillweb)
 
 ## Data types
 
@@ -142,6 +142,7 @@ Properties:
 * `stock_unit_name`: a string giving the unit in which we count this type of stock, eg. "pint" or "1l carton"
 * `stock_unit_name_plural`: plural form of `stock_unit_name`
 * `base_units_per_stock_unit`: the number of base units per stock unit as a Decimal
+* `stocklines`: a list of stockline-brief objects (see below) describing places stock of this type is being sold
 
 Examples:
 
@@ -171,7 +172,8 @@ Examples:
   "base_units_per_sale_unit": "1.0",
   "stock_unit_name": "pint",
   "stock_unit_name_plural": "pints",
-  "base_units_per_stock_unit": "1.0"
+  "base_units_per_stock_unit": "1.0",
+  "stocklines": []
 }
 ```
 
@@ -201,7 +203,8 @@ Examples:
   "base_units_per_sale_unit": "568.0",
   "stock_unit_name": "litre",
   "stock_unit_name_plural": "litres",
-  "base_units_per_stock_unit": "1000.0"
+  "base_units_per_stock_unit": "1000.0",
+  "stocklines": []
 }
 ```
 
@@ -255,7 +258,8 @@ Example:
     "base_units_per_sale_unit": "1.0",
     "stock_unit_name": "pint",
     "stock_unit_name_plural": "pints",
-    "base_units_per_stock_unit": "1.0"
+    "base_units_per_stock_unit": "1.0",
+    "stocklines": []
   },
   "remaining": "88.0",
   "size": "88.0"
@@ -281,7 +285,8 @@ Properties:
 * `key`: the object's websocket key
 * `id`: an integer uniquely identifying the stock line
 * `name`: a string describing this stock line
-* `location`: a string describing the physical location of this stock line
+* `location`: a string describing the physical location of this stock line (for internal use by the bars)
+* `location_display`: a string describing the physical location of this stock line (the name of the bar for display)
 * `note`: a string describing the state of this stock line or the product on sale on it; may be blank
 * `linetype`: a string describing the type of line; this will be `regular` for lines where *particular* stock items are put on sale, or `continuous` for lines where a whole stock type is on sale
 * `stockitem`: the StockItem object on sale on this stock line, if the line is of type `regular` and there is something on sale on it; otherwise null
@@ -295,6 +300,7 @@ Examples:
   "id": 104,
   "name": "Tap 1",
   "location": "Bar",
+  "location_display": "Robot Arms",
   "note": "Example",
   "linetype": "regular",
   "stockitem": {
@@ -343,6 +349,7 @@ Examples:
   "id": 130,
   "name": "Club Mate Regular",
   "location": "Fridge",
+  "location_display": "Robot Arms",
   "note": "",
   "linetype": "continuous",
   "stockitem": null,
