@@ -31,7 +31,6 @@ Here is some example output, formatted prettily:
 
 Possible values for `typeofservice_id` are:
 
-- `App` (routed to Jambonz)
 - `DECT`
 - `Group`
 - `GSM`
