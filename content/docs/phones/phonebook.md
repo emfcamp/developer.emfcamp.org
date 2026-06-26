@@ -5,34 +5,44 @@ description: Fetch the public phonebook over HTTP
 
 You can fetch a JSON representation of the [public phonebook][phonebook]
 from this URL:  
-<https://phones.emfcamp.org/api/phonebook/EMF2024>
+<https://phones.emf.camp/phonebook.json>
 
 Here is some example output, formatted prettily:
 
 ```js
 [
   {
-    "value": "1020",
-    "label": "NOC",
-    "typeofservice_id": "SNOM"
+    "number":118,
+    "mnemonic":null,
+    "length":3,
+    "name":"Directory Enquiries",
+    "service":"GROUP",
+    "type":"SERVICE"
   },
   {
-    "value": "9000",
-    "label": "Bananaphone",
-    "typeofservice_id": "SIP"
+    "number":1234,
+    "mnemonic":null,
+    "length":4,
+    "name":"Conduct",
+    "service":"SIP",
+    "type":"ORGA"
   },
   {
-    "value": "3800",
-    "label": "Joe Bloggs",
-    "typeofservice_id": "DECT"
+    "number":2002,
+    "mnemonic":null,
+    "length":4,
+    "name":"Bob Good (DECT)",
+    "service":"DECT",
+    "type":"PERSON"
   }
 ]
 ```
 
-Possible values for `typeofservice_id` are:
+Possible values for `service` are:
 
 - `DECT`
-- `Group`
+- `GROUP`
+- `PEER`
 - `GSM`
 - `POTS`
 - `SIP`
