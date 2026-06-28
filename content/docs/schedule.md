@@ -11,70 +11,90 @@ description: >
 ### Endpoints
 
 #### JSON
-[https://www.emfcamp.org/schedule/2024.json](https://www.emfcamp.org/schedule/2024.json)
+[https://www.emfcamp.org/schedule/2026.json](https://www.emfcamp.org/schedule/2026.json)
+
+### Filters
+
+You can use any of the standard schedule filters:
+
+* By stage e.g. `?venue=Stage+A` or `?venue=Stage+A&venue=Stage+B&venue=Stage+C`
+* By 'favourited' status, if logged in e.g. `?is_favourite=True`
+* By content type e.g. `?type=performance` or `?type=talk&type=workshop`
 
 ##### Example
 
 ```json
 [
   {
-    "id": 165,
-    "slug": "hacking-train-tickets-for-fun-but-not-for-profit",
-    "start_date": "2022-06-03 13:50:00",
-    "end_date": "2022-06-03 14:20:00",
-    "venue": "Stage A",
-    "latlon": [
-      52.03961,
-      -2.37787
-    ],
-    "map_link": "https://map.emfcamp.org/#18.5/52.03961/-2.37787",
-    "title": "Hacking train tickets for fun, but not for profit",
-    "speaker": "Hugh Wells",
-    "pronouns": "",
-    "user_id": 25,
-    "description": "We take a scenic tour through the origins of the UK train ticket, from the original BR specification in the 1980s through to modern replacements like mTickets, eTickets and ITSO. \r\n\r\nThis is just a detour though, and we'll focus on the 'orange ticket' (RSP 9399/9599) - which continues to be a stalwart of the UK rail network. Surely they can't be that secure? After all, anyone can encode a magstripe - right? \r\n\r\nWe'll take a look through the data encoded on these tickets, what interesting things you can do with them and maybe (assuming I've got it working by then) we'll be able to read and write our own! ",
+    "id": 70,
     "type": "talk",
-    "may_record": true,
+    "names": "Kliment",
+    "pronouns": "he/him",
+    "title": "Design decisions behind the Tildagon - a technical walkthrough",
+    "description": "A few years back we came up with the concept of a reusable event badge, and built the Tildagon. I'd like to tell you how it came to be, and walk you through the electronic, mechanical, and visual design for 2024 and 2026 and the reasoning behind the various decisions we had to make along the way. We'll go through the schematic, layout, and part selection, and hopefully some of the weirder decisions will make sense.\r\n\r\nWe'll also talk about naming things, off-by-one errors, DHL being awful, and ketchup.",
+    "short_description": "We'll go through the Tildagon's electronic, mechanical, and visual design and explain why it ended up as it is",
+    "video_privacy": "public",
     "is_fave": false,
-    "is_family_friendly": false,
-    "content_note": "",
-    "source": "database",
-    "link": "https://www.emfcamp.org/schedule/2022/165-hacking-train-tickets-for-fun-but-not-for-profit",
-    "start_time": "13:50",
-    "end_time": "14:20"
+    "official_content": true,
+    "slug": "design-decisions-behind-the-tildagon-a-technical-walkthrough",
+    "link": "http://www.emfcamp.org/schedule/2026/70-design-decisions-behind-the-tildagon-a-technical-walkthrough",
+    "occurrences": [
+      {
+        "occurrence_num": 1,
+        "start_date": "2026-07-17 10:00:00",
+        "start_time": "10:00",
+        "end_date": "2026-07-17 11:00:00",
+        "end_time": "11:00",
+        "venue": "Stage X",
+        "latlon": [
+          52.043008,
+          -2.377768
+        ],
+        "map_link": "https://map.emfcamp.org/#18.5/52.043008/-2.377768/m=52.043008,-2.377768",
+        "uses_lottery": false,
+        "video_privacy": "public",
+        "recording_lost": false
+      }
+    ],
+    "family_friendly": false,
+    "content_note": ""
   },
   ...
 ]
 ```
 
-#### ICal
+#### iCal
 
 There's also an [iCalendar version](https://en.wikipedia.org/wiki/ICalendar) of the main feed.
 
-[https://www.emfcamp.org/schedule/2024.ical](https://www.emfcamp.org/schedule/2024.ical)
+[https://www.emfcamp.org/schedule/2026.ical](https://www.emfcamp.org/schedule/2026.ical)
+
+Note that this won't be active until the schedule is published.
 
 ##### Example
 
 ```
 BEGIN:VCALENDAR
 VERSION:2.0
-SUMMARY:EMF 2024
-X-WR-CALDESC:EMF 2024
-X-WR-CALNAME:EMF 2024
+SUMMARY:EMF 2026
+X-WR-CALDESC:EMF 2026
+X-WR-CALNAME:EMF 2026
 BEGIN:VEVENT
-SUMMARY:Soldering Workshop (Beginners)
-DTSTART;TZID=Europe/London;VALUE=DATE-TIME:20240531T133000
-DTEND;TZID=Europe/London;VALUE=DATE-TIME:20240531T150000
-UID:531
-DESCRIPTION:Badge soldering workshop for people who haven't soldered befor
- e - you can learn how to solder with a simple LED badge kit! Younger child
- ren can do this with parental supervision. This will not take the full 90 
- minutes\, so feel free to drop in. Maximum of 10 people at a time.\n\nAtte
- nding this workshop will cost: £3\nSuitable age range: Aimed at adults\, 
- but supervised kids welcome.\nAttendees should bring: Badge and soldering 
- equipment provided. Children must be supervised.\n\nLink: https://www.emfc
- amp.org/schedule/2024/531-soldering-workshop-beginners
-LOCATION:Workshop 1 (NottingHack)
+SUMMARY:Design decisions behind the Tildagon - a technical walkthrough
+DTSTART;TZID=Europe/London:20260717T100000
+DTEND;TZID=Europe/London:20260717T110000
+UID:2026-content-70-1
+DESCRIPTION:A few years back we came up with the concept of a reusable eve
+ nt badge\, and built the Tildagon. I'd like to tell you how it came to be\
+ , and walk you through the electronic\, mechanical\, and visual design for
+  2024 and 2026 and the reasoning behind the various decisions we had to ma
+ ke along the way. We'll go through the schematic\, layout\, and part selec
+ tion\, and hopefully some of the weirder decisions will make sense.\n\nWe'
+ ll also talk about naming things\, off-by-one errors\, DHL being awful\, a
+ nd ketchup.\n\nLink: https://www.emfcamp.org/schedule/2026/70-design-decis
+ ions-behind-the-tildagon-a-technical-walkthrough\nVenue: Stage X (https://
+ map.emfcamp.org/#18.5/52.043008/-2.377768/m=52.043008\,-2.377768)
+LOCATION:Stage X
 END:VEVENT
 BEGIN:VEVENT
 ... (more events here)
@@ -86,7 +106,7 @@ END:VCALENDAR
 
 ## Now and Next
 
-To find out what talks are happening by stage now or soon a now/next endpoint is available. Filters by stage are also supported e.g. `?venue=Stage+A`.
+To find out what talks are happening by stage now or soon, a now/next endpoint is available, which saves on parsing the entire schedule.
 
 ### Endpoint
 
@@ -94,58 +114,84 @@ To find out what talks are happening by stage now or soon a now/next endpoint is
 
 ### Filters
 
-#### Example
+You can use any of the standard schedule filters:
+
+* By stage e.g. `?venue=Stage+A` or `?venue=Stage+A&venue=Stage+B&venue=Stage+C`
+* By 'favourited' status, if logged in e.g. `?is_favourite=True`
+* By content type e.g. `?type=performance` or `?type=talk&type=workshop`
+
+### Example
 
 ```json
 {
   "stage-a": [
     {
-      "id": 143,
-      "slug": "iure-dolore-aperiam-expedita-cum-magnam-quidem",
-      "start_date": "2022-06-03 10:00:00",
-      "end_date": "2022-06-03 10:30:00",
-      "venue": "Stage A",
-      "latlon": [
-        52.03961,
-        52.03961
-      ],
-      "map_link": "https://map.emfcamp.org/#18.5/52.03961/52.03961",
-      "title": "Iure dolore aperiam expedita cum magnam quidem.",
-      "speaker": "Graeme Adams",
-      "pronouns": null,
-      "user_id": 142,
-      "description": "Adipisci mollitia aliquid qui. Nam quae vero blanditiis minima nulla temporibus rem.\nQuod adipisci modi in autem porro architecto. Est odio sapiente soluta ea dolores.\nUllam nisi perspiciatis praesentium tempora eum perspiciatis. Fuga ut non dolore eum odio.\nCupiditate recusandae dolores molestiae accusantium reiciendis voluptates. Incidunt beatae similique nemo non.\nVitae sequi in soluta fugiat. Tempora maxime neque nostrum. Ea ipsa qui nulla cupiditate. Fuga iste quis autem omnis.",
+      "id": 24,
       "type": "talk",
-      "may_record": null,
+      "names": "Howard Anderson",
+      "pronouns": "he/him",
+      "title": "Fugiat doloribus repellat exercitationem qui asperiores",
+      "description": "Sequi dolore id vero. Sint quam accusamus similique eligendi repellendus. Nulla aliquid quasi dolore.\nExercitationem facere nulla aspernatur dolorum occaecati.\nDicta voluptate fugit nulla. Aut eaque temporibus placeat dignissimos.\nDolore odit aperiam illo enim illum. Nulla perspiciatis eius voluptatibus. Ex et molestias praesentium. Fuga ex iusto repellendus.\nRecusandae voluptatibus facere occaecati aut. Dicta et earum ratione eligendi.",
+      "short_description": "Consequatur dignissimos sunt vitae provident amet a harum ipsum porro itaque tempore reiciendis nesciunt nesciunt reiciendis esse accusantium quod.",
+      "video_privacy": "public",
       "is_fave": false,
-      "source": "database",
-      "link": "http://localhost:2342/line-up?year=2022&slug=iure-dolore-aperiam-expedita-cum-magnam-quidem&proposal_id=143",
-      "start_time": "10:00",
-      "end_time": "10:30"
+      "official_content": true,
+      "slug": "fugiat-doloribus-repellat-exercitationem-qui-asperiores",
+      "link": "https://www.emfcamp.org/schedule/2026/24-fugiat-doloribus-repellat-exercitationem-qui-asperiores",
+      "occurrences": [
+        {
+          "occurrence_num": 2,
+          "start_date": "2026-07-17 11:00:00",
+          "end_date": "2026-07-17 11:50:00",
+          "venue": "Stage A",
+          "latlon": [
+            52.03961,
+            -2.37787
+          ],
+          "map_link": "https://map.emfcamp.org/#18.5/52.03961/-2.37787/m=52.03961,-2.37787",
+          "uses_lottery": false,
+          "video_privacy": "public",
+          "recording_lost": false,
+          "start_time": "11:00",
+          "end_time": "11:50"
+        }
+      ],
+      "family_friendly": true,
+      "content_note": "Doloremque occaecati ducimus vero voluptatem a consequatur."
     },
     {
-      "id": 112,
-      "slug": "quos-recusandae-asperiores-ab",
-      "start_date": "2022-06-03 12:00:00",
-      "end_date": "2022-06-03 12:50:00",
-      "venue": "Stage A",
-      "latlon": [
-        52.03961,
-        52.03961
-      ],
-      "map_link": "https://map.emfcamp.org/#18.5/52.03961/52.03961",
-      "title": "Quos recusandae asperiores ab.",
-      "speaker": "William Davies",
-      "pronouns": null,
-      "user_id": 111,
-      "description": "Accusamus facilis earum reiciendis. Laborum fugiat perferendis tempora dolore eius. Neque sunt mollitia in debitis ex deleniti.\nAsperiores quis repellat in fugit voluptatibus. Non id sequi laboriosam perferendis eligendi dicta. Laboriosam tempore temporibus tempora ab itaque.\nAnimi suscipit dolor maxime modi nihil praesentium. Voluptatem consequatur eius debitis nulla quisquam ad. Tempora suscipit id dolores consequatur eveniet autem.",
+      "id": 12,
       "type": "talk",
-      "may_record": null,
+      "names": "Beth Fisher-McDonald",
+      "pronouns": "she/her",
+      "title": "Aliquid impedit nemo aperiam",
+      "description": "Debitis laborum aliquam. Autem dolorem iusto porro sit. Quasi corrupti vel. Quia debitis atque dignissimos error.\nNatus iste adipisci ipsam consequatur ex. Molestias aperiam aut vitae.\nMinima accusantium eveniet commodi. Perspiciatis praesentium reprehenderit optio dolores error voluptate. Autem voluptatem aperiam omnis sequi.\nUllam impedit maiores. Voluptatem consequuntur culpa. Explicabo quasi corporis blanditiis cupiditate.",
+      "short_description": "Aspernatur tenetur sequi corrupti voluptatum quam distinctio quod sequi sequi voluptatum molestiae placeat labore laudantium illo ratione vitae iure possimus.",
+      "video_privacy": "public",
       "is_fave": false,
-      "source": "database",
-      "link": "http://localhost:2342/line-up?year=2022&slug=quos-recusandae-asperiores-ab&proposal_id=112",
-      "start_time": "12:00",
-      "end_time": "12:50"
+      "official_content": true,
+      "slug": "aliquid-impedit-nemo-aperiam",
+      "link": "https://www.emfcamp.org/schedule/2026/12-aliquid-impedit-nemo-aperiam",
+      "occurrences": [
+        {
+          "occurrence_num": 0,
+          "start_date": "2026-07-17 12:00:00",
+          "end_date": "2026-07-17 12:50:00",
+          "venue": "Stage A",
+          "latlon": [
+            52.03961,
+            -2.37787
+          ],
+          "map_link": "https://map.emfcamp.org/#18.5/52.03961/-2.37787/m=52.03961,-2.37787",
+          "uses_lottery": false,
+          "video_privacy": "public",
+          "recording_lost": false,
+          "start_time": "12:00",
+          "end_time": "12:50"
+        }
+      ],
+      "family_friendly": false,
+      "content_note": "Aspernatur alias modi neque accusamus excepturi perferendis eligendi hic."
     }
   ],
   "stage-b": [...
