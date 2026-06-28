@@ -5,8 +5,6 @@ description: Attendee-run APIs that don't get a mention elsewhere
 
 ## In 2026
 
-Nothing yet!  Maybe you'd like to cook something up?
-
 * [Capture The Phone leaderboard and stats API](https://capturethephone.co.uk/ApiDocs) 
 
 ## In past years
