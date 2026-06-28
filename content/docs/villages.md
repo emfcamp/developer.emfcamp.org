@@ -10,7 +10,7 @@ They are available from [https://www.emfcamp.org/api](https://www.emfcamp.org/ap
 
 ### Villages (get all)
 
-Returns a list of all villages at EMF 2024 as a json object.
+Returns a list of all villages at EMF 2026 as a json object.
 
 #### Endpoint
 [https://www.emfcamp.org/api/villages](https://www.emfcamp.org/api/villages)
@@ -21,18 +21,29 @@ Returns a list of all villages at EMF 2024 as a json object.
 [
   {
     "id": 1,
-    "name": "ECS",
-    "url": null,
-    "description": "A village for the lovely people from the University of Southampton.\r\nMost of us are students/staff/alumni from ECS (Electronics and Computer Science), but all other faculties and alumni are welcome :) ",
-    "location": null
+    "name": "Cardiff Makerspace",
+    "url": "https://www.emfcamp.org/villages/2026/1-cardiff-makerspace",
+    "external_url": "https://cardiffmakerspace.com/",
+    "description": "Cardiff Makerspace is a shared workspace in Cardiff for people who like to learn and make stuff. A bunch of us will be at EMF, so come along and say hi to our lovely group of people! Our members interests include electronics, robotics, woodwork, metalwork, photography, music, jewellery making, paper craft and textiles.",
+    "location": null,
+    "num_members": 2
   },
   {
-    "id": 2,
-    "name": "Termitown",
-    "url": null,
-    "description": "Villiage for the Plymouth University computing society alumni Slack.",
-    "location": null
-  }...
+    "id": 3,
+    "name": "rLab - Reading Hackspace",
+    "url": "https://www.emfcamp.org/villages/2026/3-rlab-reading-hackspace",
+    "external_url": "https://wiki.rlab.org.uk",
+    "description": "rLab is Reading's hackspace. Founded in 2010 and moving into our current building in 2014, we're one of the longest running spaces in the UK. \r\n\r\nWe'll be doing all manner of making and hacking during EMF and we'll be keen to show off what we've been working on and even run some demos! ",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -2.3759886362119005,
+        52.041527200927334
+      ]
+    },
+    "num_members": 6
+  }, 
+  ...
 ]
 ```
 
@@ -44,15 +55,15 @@ Returns a single village's information as json if passed a valid id.
 
 #### Example
 ```json
-[
-  {
-    "id": 1,
-    "name": "ECS",
-    "url": null,
-    "description": "A village for the lovely people from the University of Southampton.\r\nMost of us are students/staff/alumni from ECS (Electronics and Computer Science), but all other faculties and alumni are welcome :) ",
-    "location": null
-  }
-]
+{
+  "id": 1,
+  "name": "Cardiff Makerspace",
+  "url": "https://www.emfcamp.org/villages/2026/1-cardiff-makerspace",
+  "external_url": "https://cardiffmakerspace.com/",
+  "description": "Cardiff Makerspace is a shared workspace in Cardiff for people who like to learn and make stuff. A bunch of us will be at EMF, so come along and say hi to our lovely group of people! Our members interests include electronics, robotics, woodwork, metalwork, photography, music, jewellery making, paper craft and textiles.",
+  "location": null,
+  "num_members": 2
+}
 ```
 
 ### My Village
@@ -67,10 +78,12 @@ If your EMF account is a member of a village you are logged in you can return yo
 [
   {
     "id": 1,
-    "name": "ECS",
-    "url": null,
-    "description": "A village for the lovely people from the University of Southampton.\r\nMost of us are students/staff/alumni from ECS (Electronics and Computer Science), but all other faculties and alumni are welcome :) ",
-    "location": null
+    "name": "Cardiff Makerspace",
+    "url": "https://www.emfcamp.org/villages/2026/1-cardiff-makerspace",
+    "external_url": "https://cardiffmakerspace.com/",
+    "description": "Cardiff Makerspace is a shared workspace in Cardiff for people who like to learn and make stuff. A bunch of us will be at EMF, so come along and say hi to our lovely group of people! Our members interests include electronics, robotics, woodwork, metalwork, photography, music, jewellery making, paper craft and textiles.",
+    "location": null,
+    "num_members": 2
   }
 ]
 ```
