@@ -1,51 +1,59 @@
 ---
-title: Phonebook JSON
+title: Phonebook
 description: Fetch the public phonebook over HTTP
 ---
 
-You can fetch a JSON representation of the [public phonebook][phonebook]
-from this URL:  
-<https://phones.emf.camp/phonebook.json>
+See https://phones.emfcamp.org/api for more info.
 
-Here is some example output, formatted prettily:
+You can fetch a JSON representation of the public phonebook from this URL: <https://phones.emf.camp/phonebook.json>
 
 ```js
 [
   {
-    "number":118,
-    "mnemonic":null,
-    "length":3,
-    "name":"Directory Enquiries",
-    "service":"GROUP",
-    "type":"SERVICE"
+    "number": 118,
+    "mnemonic": null,
+    "length": 3,
+    "name": "Directory Enquiries",
+    "service": "GROUP",
+    "type": "SERVICE"
   },
   {
-    "number":1234,
-    "mnemonic":null,
-    "length":4,
-    "name":"Conduct",
-    "service":"SIP",
-    "type":"ORGA"
+    "number": 123,
+    "mnemonic": null,
+    "length": 3,
+    "name": "Talking Clock",
+    "service": "PEER",
+    "type": null
   },
   {
-    "number":2002,
-    "mnemonic":null,
-    "length":4,
-    "name":"Bob Good (DECT)",
-    "service":"DECT",
-    "type":"PERSON"
+    "number": 150,
+    "mnemonic": null,
+    "length": 3,
+    "name": "Information",
+    "service": "PEER",
+    "type": null
   }
 ]
 ```
 
-Possible values for `service` are:
-
+Service type (`service`) can be:
 - `DECT`
-- `GROUP`
-- `PEER`
+- `SIP`
+- `DESK`
 - `GSM`
 - `POTS`
-- `SIP`
-- `SNOM` (orga desk phone)
+- `APP`
+- `GROUP`
+- `PEER`
+
+Extension type (`type`) can be:
+- `PERSON`
+- `PUBLIC`
+- `VILLAGE`
+- `SERVICE`
+- `FAX`
+- `MODEM`
+- `ORGA`
+- `IMPORTANT`
 
 [phonebook]: https://phones.emfcamp.org/
