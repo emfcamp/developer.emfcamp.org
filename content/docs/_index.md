@@ -5,14 +5,6 @@ toc_root: true
 This is the documentation for all of the weird and wonderful APIs exposed by things at EMF.
 {.h2}
 
-{{% alert title="Most content dates from 2024" color="danger" %}}
-Most pages on this website need to see some love since they were last updated for EMF 2024.
-
-Some things may change, or not be available, at EMF in 2026.
-
-If you'd like to help improve this documentation, or add more things, come and talk to us!  Details are below.
-{{% /alert %}}
-
 ## Help improve this!
 
 If you know of an API that isn't documented here [please let us know](https://github.com/emfcamp/developer.emfcamp.org/issues),
