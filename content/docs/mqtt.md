@@ -1,6 +1,6 @@
 ---
 title: MQTT broker
-description: An on-site MQTT broker, for all of your real-time data
+description: An MQTT broker just for EMF, for all of your real-time data
 ---
 
 [MQTT](https://en.wikipedia.org/wiki/MQTT) is a pub-sub protocol for real-time
