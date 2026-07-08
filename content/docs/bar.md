@@ -5,12 +5,10 @@ description: >
   Opening times, live stock, prices and sales data for the Bar and Cybar.
 ---
 * * *
-Example data is currently from the 2024 database but will be updated
-before the event starts.
-
 Prior to the event, this interface is available for testing at
 https://emftill.assorted.org.uk/ although we make no guarantees about
-the accuracy of the data returned!
+the accuracy of the data returned! Prices are not final and will
+change before the event starts.
 * * *
 
 # 2026 Bars
@@ -26,6 +24,10 @@ identify them. You will receive a fresh copy of the object over the
 websocket connection immediately after subscription, and then again
 whenever the object is updated. The websocket is at
 `wss://bar.emf.camp/websocket/`
+
+All the objects available over the websocket connection are also
+published over [MQTT](/mqtt/) with the prefix `bar/` followed by the
+key, for example `bar/stockline/100`. More details are below.
 
 [The web service that implements this API is here.](https://github.com/emfcamp/emftillweb)
 
@@ -82,16 +84,16 @@ A time period that the bar is planned to be open.
 Properties:
 
 * `type`: the string "session"
-* `opening_time`: opening time
-* `closing_time`: closing time
+* `opening_time`: opening time in localtime
+* `closing_time`: closing time in localtime
 
-Example:
+Example showing opening from 11am to 1am on Friday:
 
 ```json
 {
   "type": "session",
-  "opening_time": "2024-05-31T11:00:00",
-  "closing_time": "2024-06-01T01:00:00"
+  "opening_time": "2026-07-17T11:00:00+01:00",
+  "closing_time": "2027-07-18T01:00:00+01:00"
 }
 ```
 
@@ -154,14 +156,14 @@ Examples:
   "department": {
     "type": "department",
     "id": 20,
-    "description": "Craft Keg",
-    "notes": null
+    "description": "Craft Keg >0.5%",
+    "notes": ""
   },
   "manufacturer": "Milton",
   "name": "Dynamo",
   "abv": "3.9",
   "fullname": "Milton Dynamo (3.9% ABV)",
-  "price": "5.00",
+  "price": "4.80",
   "logo": "/media/emf/product-logos/f6ecbcf8bac0d2ac95791a9aad246666fe2c3a48924966145f914d8b645cc4f7.png",
   "tasting_notes": null,
   "base_units_bought": "1056.0",
@@ -192,11 +194,11 @@ Examples:
   "name": "Apple Juice",
   "abv": null,
   "fullname": "Sunpride Apple Juice",
-  "price": "2.50",
-  "logo": null,
+  "price": "2.00",
+  "logo": "/media/emf/product-logos/9a1b8e1a442a450611d952161900f0582d34d21522fe2ee293ac79a4f0e4bebf.png",
   "tasting_notes": null,
-  "base_units_bought": "36000.0",
-  "base_units_remaining": "36000.0",
+  "base_units_bought": "0.0",
+  "base_units_remaining": "0.0",
   "base_unit_name": "ml",
   "sale_unit_name": "pint",
   "sale_unit_name_plural": "pints",
@@ -204,7 +206,23 @@ Examples:
   "stock_unit_name": "litre",
   "stock_unit_name_plural": "litres",
   "base_units_per_stock_unit": "1000.0",
-  "stocklines": []
+  "stocklines": [
+    {
+      "type": "stockline-brief",
+      "key": "stockline/123",
+      "id": 123,
+      "name": "Apple Juice",
+      "location": "Fridge",
+      "location_display": {
+        "sort": 1,
+        "slug": "robotarms",
+        "name": "Robot Arms",
+        "maplink": "https://map.emfcamp.org/#19.72/52.0413739/-2.3776123"
+      },
+      "note": "",
+      "linetype": "continuous"
+    }
+  ]
 }
 ```
 
@@ -235,23 +253,23 @@ Example:
   "id": 3,
   "stocktype": {
     "type": "stocktype",
-    "key": "stocktype/1",
-    "id": 1,
+    "key": "stocktype/2",
+    "id": 2,
     "department": {
       "type": "department",
-      "id": 20,
-      "description": "Craft Keg",
+      "id": 10,
+      "description": "Real Ale",
       "notes": null
     },
     "manufacturer": "Milton",
-    "name": "Dynamo",
+    "name": "Justinian",
     "abv": "3.9",
-    "fullname": "Milton Dynamo (3.9% ABV)",
-    "price": "5.00",
-    "logo": "/media/emf/product-logos/f6ecbcf8bac0d2ac95791a9aad246666fe2c3a48924966145f914d8b645cc4f7.png",
-    "tasting_notes": null,
-    "base_units_bought": "1056.0",
-    "base_units_remaining": "1056.0",
+    "fullname": "Milton Justinian (3.9% ABV)",
+    "price": "4.70",
+    "logo": "/media/emf/product-logos/cea539af1f7ebb03344d9458355bf6426f83c96dbf243a69e340a70b43935c54.png",
+    "tasting_notes": "<p>Crisp pale bronze-coloured bitter. Attractive bitter orange flavours persist into a satisfying lasting finish.</p>",
+    "base_units_bought": "576.0",
+    "base_units_remaining": "576.0",
     "base_unit_name": "pint",
     "sale_unit_name": "pint",
     "sale_unit_name_plural": "pints",
@@ -261,9 +279,33 @@ Example:
     "base_units_per_stock_unit": "1.0",
     "stocklines": []
   },
-  "remaining": "88.0",
-  "size": "88.0"
+  "description": "Kilderkin",
+  "remaining": "144.0",
+  "size": "144.0",
   "remaining_pct": "100.00"
+}
+```
+
+### Location
+
+Stock lines (see below) may be associated with a physical
+location. These locations are described by a Location object.
+
+Properties:
+* `slug`: the internal name for the location; in 2026 this will be one of "robotarms", "cybar", "spacebar" or "unknown"
+* `name`: a human readable name for the location
+* `maplink`: if not null, a URL pointing at the location on `map.emfcamp.org`
+
+(`sort` can be ignored.)
+
+Example:
+
+```json
+{
+  "sort": 1,
+  "slug": "robotarms",
+  "name": "Robot Arms",
+  "maplink": "https://map.emfcamp.org/#19.72/52.0413739/-2.3776123"
 }
 ```
 
@@ -275,9 +317,9 @@ a place on the bar where we keep boxes of cider. In other cases, it's
 just an abstract thing, for example "the Orange Juice is currently
 Princes Orange Juice cartons".
 
-There are two variants of the StockLine object. The "full" varient has
+There are two variants of the StockLine object. The "full" variant has
 type "stockline" and has all the properties listed below. The "brief"
-varient has type "stockline-brief" and does not have the `stockitem`
+variant has type "stockline-brief" and does not have the `stockitem`
 or `stocktype` properties.
 
 Properties:
@@ -286,7 +328,7 @@ Properties:
 * `id`: an integer uniquely identifying the stock line
 * `name`: a string describing this stock line
 * `location`: a string describing the physical location of this stock line (for internal use by the bars)
-* `location_display`: a string describing the physical location of this stock line (the name of the bar for display)
+* `location_display`: a Location object describing the physical location of this stock line
 * `note`: a string describing the state of this stock line or the product on sale on it; may be blank
 * `linetype`: a string describing the type of line; this will be `regular` for lines where *particular* stock items are put on sale, or `continuous` for lines where a whole stock type is on sale
 * `stockitem`: the StockItem object on sale on this stock line, if the line is of type `regular` and there is something on sale on it; otherwise null
@@ -300,7 +342,12 @@ Examples:
   "id": 104,
   "name": "Tap 1",
   "location": "Bar",
-  "location_display": "Robot Arms",
+  "location_display": {
+    "sort": 1,
+    "slug": "robotarms",
+    "name": "Robot Arms",
+    "maplink": "https://map.emfcamp.org/#19.72/52.0413739/-2.3776123"
+  },
   "note": "Example",
   "linetype": "regular",
   "stockitem": {
@@ -314,7 +361,7 @@ Examples:
       "department": {
         "type": "department",
         "id": 20,
-        "description": "Craft Keg",
+        "description": "Craft Keg >0.5%",
         "notes": null
       },
       "manufacturer": "Milton",
@@ -349,7 +396,12 @@ Examples:
   "id": 130,
   "name": "Club Mate Regular",
   "location": "Fridge",
-  "location_display": "Robot Arms",
+  "location_display": {
+    "sort": 1,
+    "slug": "robotarms",
+    "name": "Robot Arms",
+    "maplink": "https://map.emfcamp.org/#19.72/52.0413739/-2.3776123"
+  },
   "note": "",
   "linetype": "continuous",
   "stockitem": null,
@@ -364,21 +416,38 @@ Examples:
       "notes": null
     },
     "manufacturer": "Club Mate",
-    "name": "Regular 500ml",
+    "name": "Regular",
     "abv": null,
-    "fullname": "Club Mate Regular 500ml",
-    "price": "2.80",
+    "fullname": "Club Mate Regular",
+    "price": "2.40",
     "logo": "/media/emf/product-logos/f38444690c6b28a8dbd6a238c1741d36dd6990aa09243dda4c30513292580a8e.png",
     "tasting_notes": null,
-    "base_units_bought": "1700.0",
-    "base_units_remaining": "1700.0",
-    "base_unit_name": "bottle",
-    "sale_unit_name": "bottle",
-    "sale_unit_name_plural": "bottles",
+    "base_units_bought": "640.0",
+    "base_units_remaining": "640.0",
+    "base_unit_name": "500ml bottle",
+    "sale_unit_name": "500ml bottle",
+    "sale_unit_name_plural": "500ml bottles",
     "base_units_per_sale_unit": "1.0",
-    "stock_unit_name": "bottle",
-    "stock_unit_name_plural": "bottles",
-    "base_units_per_stock_unit": "1.0"
+    "stock_unit_name": "500ml bottle",
+    "stock_unit_name_plural": "500ml bottles",
+    "base_units_per_stock_unit": "1.0",
+    "stocklines": [
+      {
+        "type": "stockline-brief",
+        "key": "stockline/130",
+        "id": 130,
+        "name": "Club Mate Regular",
+        "location": "Fridge",
+        "location_display": {
+          "sort": 1,
+          "slug": "robotarms",
+          "name": "Robot Arms",
+          "maplink": "https://map.emfcamp.org/#19.72/52.0413739/-2.3776123"
+        },
+        "note": "",
+        "linetype": "continuous"
+      }
+    ]
   }
 }
 ```
@@ -401,28 +470,28 @@ during the event based on available volunteers, etc.):
   "sessions": [
     {
       "type": "session",
-      "opening_time": "2024-05-29T20:00:00",
-      "closing_time": "2024-05-29T23:00:00"
+      "opening_time": "2026-07-15T20:00:00+01:00",
+      "closing_time": "2026-07-15T23:00:00+01:00"
     },
     {
       "type": "session",
-      "opening_time": "2024-05-30T15:00:00",
-      "closing_time": "2024-05-31T00:30:00"
+      "opening_time": "2026-07-16T15:00:00+01:00",
+      "closing_time": "2026-07-17T00:30:00+01:00"
     },
     {
       "type": "session",
-      "opening_time": "2024-05-31T11:00:00",
-      "closing_time": "2024-06-01T01:00:00"
+      "opening_time": "2026-07-17T11:00:00+01:00",
+      "closing_time": "2027-07-18T01:00:00+01:00"
     },
     {
       "type": "session",
-      "opening_time": "2024-06-01T11:00:00",
-      "closing_time": "2024-06-02T01:00:00"
+      "opening_time": "2026-07-18T11:00:00+01:00",
+      "closing_time": "2026-07-19T01:00:00+01:00"
     },
     {
       "type": "session",
-      "opening_time": "2024-06-02T11:00:00",
-      "closing_time": "2024-06-03T01:00:00"
+      "opening_time": "2026-07-19T11:00:00+01:00",
+      "closing_time": "2026-07-20T01:00:00+01:00"
     }
   ]
 }
@@ -554,7 +623,7 @@ bar and cybar.
 
 ⚠️This is a fairly expensive API call, please do not poll it! If you
 want to receive updates, save the object keys and subscribe to the
-objects over the websocket.
+objects over the websocket or MQTT.
 
 Example:
 
@@ -629,7 +698,7 @@ this is more efficient than retrieving everything from
 
 ⚠️This is a fairly expensive API call, please do not poll it! If you
 want to receive updates, save the object keys and subscribe to the
-objects over the websocket.
+objects over the websocket or MQTT.
 
 For example, to retrieve the Club Mate stock levels you can fetch from
 `/api/department/75.json`:
@@ -745,24 +814,86 @@ Example:
   "locations": [
     "Back bar",
     "Bar",
+    "Counter",
     "Fridge",
     "Null Sector",
     "Optics (main bar)",
-    "Optics (Null Sector)"
+    "Optics (Null Sector)",
+    "SpaceBAR"
   ]
 }
 ```
 
+`/api/locations_display.json` lists all of the stock line locations at
+the bar and cybar, along with their corresponding Location object.
+
+Example:
+
+```json
+{
+  "locations": {
+    "Back bar": {
+      "sort": 1,
+      "slug": "robotarms",
+      "name": "Robot Arms",
+      "maplink": "https://map.emfcamp.org/#19.72/52.0413739/-2.3776123"
+    },
+    "Bar": {
+      "sort": 1,
+      "slug": "robotarms",
+      "name": "Robot Arms",
+      "maplink": "https://map.emfcamp.org/#19.72/52.0413739/-2.3776123"
+    },
+    "Counter": {
+      "sort": 1,
+      "slug": "robotarms",
+      "name": "Robot Arms",
+      "maplink": "https://map.emfcamp.org/#19.72/52.0413739/-2.3776123"
+    },
+    "Fridge": {
+      "sort": 1,
+      "slug": "robotarms",
+      "name": "Robot Arms",
+      "maplink": "https://map.emfcamp.org/#19.72/52.0413739/-2.3776123"
+    },
+    "Null Sector": {
+      "sort": 2,
+      "slug": "cybar",
+      "name": "Cybar",
+      "maplink": "https://map.emfcamp.org/#21.54/52.0435004/-2.3767086"
+    },
+    "Optics (main bar)": {
+      "sort": 1,
+      "slug": "robotarms",
+      "name": "Robot Arms",
+      "maplink": "https://map.emfcamp.org/#19.72/52.0413739/-2.3776123"
+    },
+    "Optics (Null Sector)": {
+      "sort": 2,
+      "slug": "cybar",
+      "name": "Cybar",
+      "maplink": "https://map.emfcamp.org/#21.54/52.0435004/-2.3767086"
+    },
+    "SpaceBAR": {
+      "sort": 3,
+      "slug": "spacebar",
+      "name": "SpaceBAR",
+      "maplink": "https://map.emfcamp.org/#21.97/52.0437675/-2.37703993"
+    }
+  }
+}
+```
+
+
 ### Stock lines
 
-`/api/stocklines.json` lists all of the stock lines at the bar and
-cybar.
+`/api/stocklines.json` lists all of the stock lines.
 
 By default it returns the "brief" variant of the StockLine object. You
 can request full StockLine objects by setting the "output" query
 parameter to "full"; please be aware that this can be an expensive
 query and you should not use it to poll! Subscribe to updates using
-the websocket interface instead.
+the websocket interface instead, or use MQTT.
 
 You can restrict the output to stock lines of a particular type using
 the "type" query parameter, and to a particular location using the
@@ -770,6 +901,10 @@ the "type" query parameter, and to a particular location using the
 
 * `/api/stocklines.json?type=regular&location=Bar`
 * `/api/stocklines.json?type=regular&location=Null%20Sector`
+
+You can restrict the output to stock lines that start with a
+particular string using the "startswith" query parameter, and to exact
+matches using the "name" parameter.
 
 Example output for location=Bar:
 ```json
@@ -781,6 +916,12 @@ Example output for location=Bar:
       "id": 119,
       "name": "Cider 1",
       "location": "Bar",
+      "location_display": {
+        "sort": 1,
+        "slug": "robotarms",
+        "name": "Robot Arms",
+        "maplink": "https://map.emfcamp.org/#19.72/52.0413739/-2.3776123"
+      },
       "note": "",
       "linetype": "regular"
     },
@@ -790,6 +931,12 @@ Example output for location=Bar:
       "id": 120,
       "name": "Cider 2",
       "location": "Bar",
+      "location_display": {
+        "sort": 1,
+        "slug": "robotarms",
+        "name": "Robot Arms",
+        "maplink": "https://map.emfcamp.org/#19.72/52.0413739/-2.3776123"
+      },
       "note": "",
       "linetype": "regular"
     },
@@ -799,6 +946,12 @@ Example output for location=Bar:
       "id": 121,
       "name": "Cider 3",
       "location": "Bar",
+      "location_display": {
+        "sort": 1,
+        "slug": "robotarms",
+        "name": "Robot Arms",
+        "maplink": "https://map.emfcamp.org/#19.72/52.0413739/-2.3776123"
+      },
       "note": "",
       "linetype": "regular"
     },
@@ -808,6 +961,12 @@ Example output for location=Bar:
       "id": 100,
       "name": "Pump 1",
       "location": "Bar",
+      "location_display": {
+        "sort": 1,
+        "slug": "robotarms",
+        "name": "Robot Arms",
+        "maplink": "https://map.emfcamp.org/#19.72/52.0413739/-2.3776123"
+      },
       "note": "",
       "linetype": "regular"
     },
@@ -817,6 +976,12 @@ Example output for location=Bar:
       "id": 101,
       "name": "Pump 2",
       "location": "Bar",
+      "location_display": {
+        "sort": 1,
+        "slug": "robotarms",
+        "name": "Robot Arms",
+        "maplink": "https://map.emfcamp.org/#19.72/52.0413739/-2.3776123"
+      },
       "note": "",
       "linetype": "regular"
     },
@@ -826,6 +991,12 @@ Example output for location=Bar:
       "id": 102,
       "name": "Pump 3",
       "location": "Bar",
+      "location_display": {
+        "sort": 1,
+        "slug": "robotarms",
+        "name": "Robot Arms",
+        "maplink": "https://map.emfcamp.org/#19.72/52.0413739/-2.3776123"
+      },
       "note": "",
       "linetype": "regular"
     },
@@ -835,6 +1006,12 @@ Example output for location=Bar:
       "id": 103,
       "name": "Pump 4",
       "location": "Bar",
+      "location_display": {
+        "sort": 1,
+        "slug": "robotarms",
+        "name": "Robot Arms",
+        "maplink": "https://map.emfcamp.org/#19.72/52.0413739/-2.3776123"
+      },
       "note": "",
       "linetype": "regular"
     },
@@ -844,7 +1021,13 @@ Example output for location=Bar:
       "id": 104,
       "name": "Tap 1",
       "location": "Bar",
-      "note": "Example",
+      "location_display": {
+        "sort": 1,
+        "slug": "robotarms",
+        "name": "Robot Arms",
+        "maplink": "https://map.emfcamp.org/#19.72/52.0413739/-2.3776123"
+      },
+      "note": "",
       "linetype": "regular"
     },
     {
@@ -853,6 +1036,12 @@ Example output for location=Bar:
       "id": 105,
       "name": "Tap 2",
       "location": "Bar",
+      "location_display": {
+        "sort": 1,
+        "slug": "robotarms",
+        "name": "Robot Arms",
+        "maplink": "https://map.emfcamp.org/#19.72/52.0413739/-2.3776123"
+      },
       "note": "",
       "linetype": "regular"
     },
@@ -862,6 +1051,12 @@ Example output for location=Bar:
       "id": 106,
       "name": "Tap 3",
       "location": "Bar",
+      "location_display": {
+        "sort": 1,
+        "slug": "robotarms",
+        "name": "Robot Arms",
+        "maplink": "https://map.emfcamp.org/#19.72/52.0413739/-2.3776123"
+      },
       "note": "",
       "linetype": "regular"
     },
@@ -871,6 +1066,12 @@ Example output for location=Bar:
       "id": 107,
       "name": "Tap 4",
       "location": "Bar",
+      "location_display": {
+        "sort": 1,
+        "slug": "robotarms",
+        "name": "Robot Arms",
+        "maplink": "https://map.emfcamp.org/#19.72/52.0413739/-2.3776123"
+      },
       "note": "",
       "linetype": "regular"
     },
@@ -880,6 +1081,12 @@ Example output for location=Bar:
       "id": 108,
       "name": "Tap 5",
       "location": "Bar",
+      "location_display": {
+        "sort": 1,
+        "slug": "robotarms",
+        "name": "Robot Arms",
+        "maplink": "https://map.emfcamp.org/#19.72/52.0413739/-2.3776123"
+      },
       "note": "",
       "linetype": "regular"
     },
@@ -889,6 +1096,72 @@ Example output for location=Bar:
       "id": 109,
       "name": "Tap 6",
       "location": "Bar",
+      "location_display": {
+        "sort": 1,
+        "slug": "robotarms",
+        "name": "Robot Arms",
+        "maplink": "https://map.emfcamp.org/#19.72/52.0413739/-2.3776123"
+      },
+      "note": "",
+      "linetype": "regular"
+    },
+    {
+      "type": "stockline-brief",
+      "key": "stockline/184",
+      "id": 184,
+      "name": "Tap 7",
+      "location": "Bar",
+      "location_display": {
+        "sort": 1,
+        "slug": "robotarms",
+        "name": "Robot Arms",
+        "maplink": "https://map.emfcamp.org/#19.72/52.0413739/-2.3776123"
+      },
+      "note": "",
+      "linetype": "regular"
+    },
+    {
+      "type": "stockline-brief",
+      "key": "stockline/185",
+      "id": 185,
+      "name": "Tap 8",
+      "location": "Bar",
+      "location_display": {
+        "sort": 1,
+        "slug": "robotarms",
+        "name": "Robot Arms",
+        "maplink": "https://map.emfcamp.org/#19.72/52.0413739/-2.3776123"
+      },
+      "note": "",
+      "linetype": "regular"
+    },
+    {
+      "type": "stockline-brief",
+      "key": "stockline/188",
+      "id": 188,
+      "name": "Tap C",
+      "location": "Bar",
+      "location_display": {
+        "sort": 1,
+        "slug": "robotarms",
+        "name": "Robot Arms",
+        "maplink": "https://map.emfcamp.org/#19.72/52.0413739/-2.3776123"
+      },
+      "note": "",
+      "linetype": "regular"
+    },
+    {
+      "type": "stockline-brief",
+      "key": "stockline/186",
+      "id": 186,
+      "name": "Tap L",
+      "location": "Bar",
+      "location_display": {
+        "sort": 1,
+        "slug": "robotarms",
+        "name": "Robot Arms",
+        "maplink": "https://map.emfcamp.org/#19.72/52.0413739/-2.3776123"
+      },
       "note": "",
       "linetype": "regular"
     }
@@ -945,12 +1218,21 @@ Key: `totals/by-unit`
 This object gives the amounts sold broken down by Unit, where Unit is
 one of the following:
 
+* `187ml can`
+* `200ml bottle`
+* `200ml can`
+* `250ml can`
 * `25ml measure`
-* `Bottle (not wine)`
-* `Can`
-* `Pint (draught)`
-* `Pint (from carton)`
+* `330ml can`
+* `375ml can`
+* `440ml can`
+* `500ml bottle`
+* `500ml can`
+* `568ml can`
 * `Wine bottle`
+* `Pint (from carton)`
+* `Packet`
+* `Pint (draught)`
 
 The amount sold is given as a Decimal. If the amount sold is zero, the
 Unit is omitted.
@@ -962,7 +1244,7 @@ Example:
   "type": "totals by unit",
   "key": "totals/by-unit",
   "units": {
-    "Can": "1.0"
+    "330ml can": "1.0"
   }
 }
 ```
@@ -994,11 +1276,13 @@ Example:
 ## MQTT
 
 All the objects that can be subscribed to over the websocket will also
-be published over MQTT, as `emf/bar/{key}`
-(eg. `emf/bar/stockline/100`). The "retain" flag will be set.
+be published over MQTT, as `bar/{key}`
+(eg. `bar/stockline/100`). The "retain" flag will be set.
 
 If a key is removed, a message with a zero length payload will be
 published (to remove the retained data) and then a "Not present"
 object will be sent without the "retain" flag set.
 
 Check out the [MQTT broker](/mqtt/) page for details on how to connect.
+
+Note that the prefix has changed for 2026; it was `emf/bar/` in 2024.
