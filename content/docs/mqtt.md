@@ -46,6 +46,7 @@ Check out topics under these prefixes, which might have something fun to look at
   TL;DR: anything published over the bar system's websocket API can also be found on MQTT.
 <!-- - `films/` -- EMF Films will be publishing "an unnecessary level of info" under this prefix. -->
 - `weather/hq` -- live weather data from HQ.  Full details on the [Weather](/weather/) page.
+- `overbrewed/scoreboard/#` -- live scores from the Overbrewed! game in NullSector
 
 ### Tips on topic naming, and wildcard subscriptions
 
