@@ -53,6 +53,7 @@ Check out topics under these prefixes, which might have something fun to look at
 - `bar/` -- live stats from the bars at the Robot Arms and NullSector.  See the [Bar page](/bar/) for the full rundown of what's published here.  
   TL;DR: anything published over the bar system's websocket API can also be found on MQTT.
 <!-- - `films/` -- EMF Films will be publishing "an unnecessary level of info" under this prefix. -->
+- `lorawan/` -- this is the firehose of events from EMF's [LoRaWAN](https://en.wikipedia.org/wiki/LoRaWAN) system, which is running on [ChirpStack](https://www.chirpstack.io/).
 - `weather/hq` -- live weather data from HQ.  Full details on the [Weather](/weather/) page.
 - `overbrewed/` -- live scores from the Overbrewed! game in NullSector. More on the [Overbrewed!](/overbrewed/) page.
 
