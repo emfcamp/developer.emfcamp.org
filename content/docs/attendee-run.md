@@ -6,7 +6,7 @@ description: Attendee-run APIs that don't get a mention elsewhere
 ## In 2026
 
 * [Capture The Phone leaderboard and stats API](https://capturethephone.co.uk/ApiDocs) 
-* Overbrewed! -- live scoreboard available on [MQTT](/mqtt/) at `overbrewed/scoreboard/#` topics
+* Overbrewed! -- [live scoreboard](/overbrewed/)
 
 ## In past years
 
