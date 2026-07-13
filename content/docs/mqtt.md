@@ -21,8 +21,12 @@ Hostname: `mqtt.emf.camp`
 Ports available:
   - 1883, no TLS (plaintext)
   - 8883, with TLS (encrypted)
+  - 15675, websocket (plaintext)
+  - 15676, websocket with TLS (encrypted)
 
 You don't need to authenticate, see below.
+
+Websocket connections should work from any origin, so you can use any Javascript MQTT client if you want to publish a website that makes use of data from the MQTT broker.
 
 ## Topics and permissions
 
@@ -37,6 +41,10 @@ Some event infrastructure is publishing to MQTT too, using other topic prefixes
 where publishing (but not subscribing) is protected with usernames & passwords.
 We use these to help run the event!  There are also a number of installations
 and games doing cool things on MQTT.
+
+### Exploring the broker
+
+You can use Ryan Bateman's [MQTT visualiser](https://ryanbateman.github.io/mqtt_vis/?broker=wss%3A%2F%2Fmqtt.emf.camp%3A15676%2Fws&topic=%23) to get an overview of the available topics, follow that link and click Connect to see a graph of the topic hierarchy updated as new messages arrive. It'll take anything up to a few minutes to fully populate as it can only show topics once a message is seen on them.
 
 ### Known topic namespaces
 
