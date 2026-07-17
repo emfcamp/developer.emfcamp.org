@@ -4,12 +4,6 @@ linkTitle: Bar
 description: >
   Opening times, live stock, prices and sales data for the Bar and Cybar.
 ---
-* * *
-Prior to the event, this interface is available for testing at
-https://emftill.assorted.org.uk/ although we make no guarantees about
-the accuracy of the data returned! Prices are not final and will
-change before the event starts.
-* * *
 
 # 2026 Bars
 
